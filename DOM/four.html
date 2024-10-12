@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur code | DOM</title>
+   
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+    <script>
+      function addlang(langname){
+        const li= document.createElement('li');
+        li.innerHTML =`${langname}`;
+        document.querySelector('.language').appendChild(li);
+      }
+      addlang("python")
+      addlang("html")
+      function addoptilanguage(langname){
+        const li= document.createElement('li');
+        li.appendChild(document.createTextNode(langname))
+        document.querySelector('.language').appendChild(li)
+      }
+      addoptilanguage("golang")
+
+      // edit
+      const secondlang = document.querySelector("li:nth-child(2)")
+     //   secondlang.innerHTML ="mojo"   // but this one is not optimized approach 
+       
+
+     // second approach
+
+     const addLang = document.createElement('li')
+     addLang.appendChild(document.createTextNode('mojo'))
+     secondlang.replaceWith(addLang)
+     
+
+
+       // one more edit example(third approach)
+       const thirdlang =document.querySelector("li:nth-child(3)")
+       const newlang =document.createElement('li')
+       newlang.textContent="react";
+       thirdlang.replaceWith(newlang);
+       
+
+       // another example
+
+       const fourthlang =document.querySelector("li:nth-child(4)")
+       const newLang =document.createElement('li')
+       newLang.textContent="tailwind css"
+        fourthlang.replaceWith(newLang)
+
+        // fourth approach
+    const firstlang = document.querySelector("li:nth-child(1)");
+    firstlang.outerHTML="<li>typescript</li>";
+
+    //remove 
+
+    const lastlang =document.querySelector("li:last-child")
+    lastlang.remove()
+    </script>
+</body>
+</html>
